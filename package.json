@@ -1,0 +1,18 @@
+{
+  "name": "ng-phonebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.15.1",
+    "angular": "^1.7.8",
+    "bootstrap": "^4.3.1",
+    "jquery": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start-api-server": "./node_modules/.bin/json-server ./db.json"
+  },
+  "author": "",
+  "license": "ISC"
+}
