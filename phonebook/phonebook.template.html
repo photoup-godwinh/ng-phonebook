@@ -1,0 +1,46 @@
+
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-2 offset-md-10" ng-if="!$ctrl.adding">
+            <a class="btn btn-primary text-light"
+                ng-click="$ctrl.addNew()">Add New</a>
+        </div>
+
+        <div class="col-md-12" ng-if="$ctrl.adding">
+            <contact-new
+                on-add="$ctrl.add(data)"
+                on-cancel="$ctrl.cancelAdd()"
+                ></contact-new>
+        </div>
+    </div>
+
+    <div class="row heading mt-5">
+        <div class="col-xs-1 col-sm-1">
+            <strong>ID</strong>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+            <strong>First name</strong>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+            <strong>Last name</strong>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+            <strong>Number</strong>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+            <strong>Action</strong>
+        </div>
+    </div>
+
+    <div class="row" 
+        ng-if="$ctrl.contacts.length == 0">
+        <em>Sorry, no contacts found.</em></div>
+    
+    <contact 
+        ng-if="$ctrl.contacts.length > 0"
+        ng-repeat="contact in $ctrl.contacts"
+        contact="contact"
+        on-update="$ctrl.update(data, id)"
+        on-delete="$ctrl.delete(id)"></contact>
+</div>

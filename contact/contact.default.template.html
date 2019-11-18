@@ -1,0 +1,24 @@
+<div class="row contact-row" ng-if="!$ctrl.editMode">
+    <div class="col-xs-1 col-sm-1">
+        {{ $ctrl.contact.id }}
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        {{ $ctrl.contact.first_name }}
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        {{ $ctrl.contact.last_name }}
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        {{ $ctrl.contact.number }}
+    </div>
+    <div class="col-xs-2 col-sm-2">
+        <a href="#" class="text-primary" ng-click="$ctrl.setEditMode(true)">edit</a> 
+        | 
+        <a href="#" class="text-danger" ng-click="$ctrl.delete()">delete</a>
+    </div>
+</div>
+
+<contact-edit 
+    ng-if="$ctrl.editMode"
+    contact="$ctrl.contact"
+    on-update="$ctrl.update(data)"></contact-edit>

@@ -1,0 +1,23 @@
+<form novalidate autocomplete="off" 
+    name="$ctrl.form"
+    ng-submit="$ctrl.save()">
+<div class="row contact-row">
+    <div class="col-xs-1 col-sm-1">
+        {{ $ctrl.contact.id }}
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        <input type="text" ng-model="$ctrl.copy.first_name" name="first_name" required />
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        <input type="text" ng-model="$ctrl.copy.last_name" name="last_name" required />
+    </div>
+    <div class="col-xs-3 col-sm-3">
+        <input type="text" ng-model="$ctrl.copy.number" name="number" required />
+    </div>
+    <div class="col-xs-2 col-sm-2">
+        <input type="submit" name="" />
+        | 
+        <a href="" class="text-default" ng-click="$ctrl.cancelEdit()">cancel</a>
+    </div>
+</div>
+</form>
